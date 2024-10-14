@@ -1,24 +1,46 @@
-let a = prompt("Dime números separados por comas: ");
-let b = prompt("Dime otros números separados por comas: ");
+function copiaUnicos(array1, array2) {
+    let arrayFinal = [];
 
-a = a.split(",");
-b = b.split(",");
-let max
+    // Agregar elementos únicos de array1 que no estén 
+    // repetidos en array1 ni esten en array2
+    for (let i = 0; i < array1.length; i++) {
+        if (array1.indexOf(array2[i]) === -1 && !repetidos(array2, array2[i])) {
+        //if (array2.indexOf(array1[i]) === -1 && esUnico(array1, array1[i])) {
+        // if (!array1.includes(array2[1]) && !repetidos(array2, array2[i])) {
+            arrayFinal.push(array1[i]);
+        }
+    }
 
-if(a.length>b.length){
-    max=a.length;
-}else{
-    max=b.length;
+    // Agregar elementos únicos de array2 que no estén 
+    // repetidos en array2 ni esten en array1
+    for (let i = 0; i < array2.length; i++) {
+        if (array1.indexOf(array2[i]) === -1 && !repetidos(array2, array2[i])) {
+        //if (array1.indexOf(array2[i]) === -1 && esUnico(array2, array2[i])) {
+        // if (!array1.includes(array2[1]) && !repetidos(array2, array2[i])) {
+            arrayFinal.push(array2[i]);
+        }
+    }
+    return arrayFinal;
 }
 
-let res=[]
-
-for(let i=0;i<max;i++){
-    if(i<a.length){
-        res.push(a[i]);
+esUnico([77, "ciao", 8, "ciao", 42], "ciao");
+function esUnico(array, elem) {
+    return array.indexOf(elem) === array.lastIndexOf(elem);
+}
+function repetidos(array, elem) {
+    let cont = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === elem) {
+            cont++;
+        }
     }
-    if(i<b.length){
-        res.push(b[i]);
+
+    if (cont == 1) {
+        return false;
+    } else {
+        return true;
     }
 }
-console.log("Arrays concatenados "+res);
+
+let resultado = copiaUnicos([77, "ciao", 8, "ciao", 42], [77, 42, 9]);
+console.log(resultado); // Salida: [8,9]
