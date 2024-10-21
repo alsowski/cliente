@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Título</h1>
+    <!-- <img src="https://via.placeholder.com/250x100" alt=""> -->
+    <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+
+    <script>
+        function ready() {
+            alert("DOM está listo");
+            alert(`Tamaño de imagen: ${img.offsetWidth}x${img.offsetHeight} `);
+        }
+        // opcion 1 "DOMContentLoaded"
+        document.addEventListener("DOMContentLoaded", ready);
+
+        // opcion 2 onload
+        // window.onload = function () {
+        //     alert("DOM está listo");
+        //     alert(`Tamaño de imagen: ${img.offsetWidth}x${img.offsetHeight} `);
+        // }
+        // // opcion 2 onload B
+        // window.addEventListener('load', ready);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+    <script>
+        alert("Libreria cargada, línea de script ejecutada");
+    </script>
+</body>
+</html>
