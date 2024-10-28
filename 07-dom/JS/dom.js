@@ -1,7 +1,7 @@
 function inicioDOM() {
     console.log("Dom cargado");
 
-    document.body.style.backgroundColor = "yellow";
+    document.body.style.backgroundColor = "cyan";
 
     // document.getElementById
     let titulo = document.getElementById("title");
@@ -29,7 +29,7 @@ function inicioDOM() {
         if (i == 3) {
             parrafos[i].innerHTML = "Parrafo cambiado";
         }
-        console.log(`Párrafo ${i+1}: ${parrafos[i].innerHTML}`);
+        console.log(`Párrafo ${i + 1}: ${parrafos[i].innerHTML}`);
     }
 
     // querySelector()
@@ -46,8 +46,8 @@ function inicioDOM() {
     //querySelectorAll()
     let elementos = document.querySelectorAll('p.parrafos1');
     console.log(`Número de elementos que tengo: ${elementos.length}`);
-    for (let i=0; i<elementos.length; i++){
-        console.log(`Elemento ${i+1}: ${elementos[i].innerHTML}`);
+    for (let i = 0; i < elementos.length; i++) {
+        console.log(`Elemento ${i + 1}: ${elementos[i].innerHTML}`);
     }
 
     // Selecciono el DOM parcialmente
@@ -55,13 +55,14 @@ function inicioDOM() {
     console.log(sectionProjects);
     elementos = sectionProjects.querySelectorAll(`p.parrafos1`);
     console.log(`Número de elementos que tengo: ${elementos.length}`);
-    for (let i=0; i<elementos.length; i++){
-        console.log(`Elemento ${i+1}: ${elementos[i].innerHTML}`);
+    for (let i = 0; i < elementos.length; i++) {
+        console.log(`Elemento ${i + 1}: ${elementos[i].innerHTML}`);
     }
 }
+
 let estado = true;
 
-function cambioTitulo(cabecera){
+function cambioTitulo(cabecera) {
     // cabecera.style.color = cabecera.style.color === 'red' ? 'black' : 'red';
     // if(estado) {
     //     cabecera.style.color='red';
@@ -80,7 +81,7 @@ function cambioTitulo(cabecera){
 }
 
 // Vamos a modificar el Título 2
-function cambioSubtitulo(elemento){
+function cambioSubtitulo(elemento) {
     elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
 }
 
@@ -88,7 +89,7 @@ function cambioSubtitulo(elemento){
 // elemento.style.color = 'orange';
 document.getElementById('subtitle').onclick = cambioSubtitulo2;
 
-function cambioSubtitulo2(){
+function cambioSubtitulo2() {
     // console.log("llego")
     let elemento = document.getElementById('subtitle');
     elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
@@ -96,15 +97,35 @@ function cambioSubtitulo2(){
 
 // opción 1 llamada a eventos desde JS
 // elemento.onclick = cambioSubtítulo(elemento);
+// elemento = document.getElementById('subtitle2');
+// elemento.style.color = 'blue';
 
 let subtitulo2 = document.getElementById('subtitle2');
-subtitle2.addEventListener('click', cambioSubtitulo3);
+subtitulo2.addEventListener('click', cambioSubtitulo3);
 
-elemento = document.getElementById('subtitle2');
-elemento.style.color = 'blue';
-
-function cambioSubtitulo3(){
+function cambioSubtitulo3() {
     // console.log("llego")
     let elemento = document.getElementById('subtitle2');
     elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
+}
+
+let c1 = document.getElementById('caja1');
+c1.addEventListener('click', cambioClase1);
+
+let c2 = document.getElementById('caja1');
+c2.addEventListener('click', cambioClase2);
+
+function cambioClase1() {
+    // c1.style.background = 'black';
+    // c1.style.color = 'white';
+    if (c1.classList.contains('caja--negra')){
+        c1.classList.remove('caja--negra');
+        c2.classList.add('caja--roja');
+    } else {
+        c2.classList.replace('caja--roja', 'caja--negra');
+    }
+}
+
+function cambioClase2() {
+
 }
