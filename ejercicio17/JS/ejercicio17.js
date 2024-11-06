@@ -28,9 +28,6 @@ timer = setInterval(function () {
     let velocidad1 = parseInt
     if (!final) {
         div1.style.setProperty("left", div1.style.getPropertyValue("left") + velocidades[0] + "px");
-
-        // opción 2
-        // div.style.left = div1.style.left + velocidades[0] + "px";
         if (div1.style.getPropertyValue("left") >= 1080) {
             final = true;
             alert("ha ganando div 1");
