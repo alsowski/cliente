@@ -12,11 +12,11 @@ for (let i = 0; i < color.length; i++) {
 
 /*
 Uso de window.getComputedStyle:
-    getComputedStyle te permite acceder al valor final de una propiedad CSS 
-    (incluyendo aquellas definidas por clases o en el archivo de estilo), en 
+    getComputedStyle te permite acceder al valor final de una propiedad CSS
+    (incluyendo aquellas definidas por clases o en el archivo de estilo), en
     lugar de solo los estilos en línea.
 
-window.getComputedStyle(color[i]).backgroundColor devuelve el color de 
+window.getComputedStyle(color[i]).backgroundColor devuelve el color de
 fondo real del div (el que está definido por la clase CSS, como .amarillo, .naranja o .rosa).
 
 Se usa esto porque con el .style.backgroundcolor solo afecta a lo que haya en el style de la
