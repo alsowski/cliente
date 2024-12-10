@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        #contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .num {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px dashed #555;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            width: 60px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="num" id="div1"></div>
+        <div class="num" id="div2"></div>
+    </div>
+    <button id="botonGenerar">¡¡ Genera !!</button>
+
+    <div id="resultado"></div>
+
+    <button id="botonComparar" disabled>&lt;&lt; Compara &gt;&gt;</button>
+    <script src="JS/ej1.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>T1P2-Ejercicio 3</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="estilos/bloques.css"> -->
+
+<!-- PUEDES enlazar tantos archivos JS como necesites AQUI -->
+
+<!-- <script src="JS/ej1.js"></script>
+	</head>
+
+    <body>
+    	<h2> EL JUEGO DEL DAWLAMAR </h2>
+
+    	<section>
+    		<div id="ladoIzq"></div>
+    		<div id="ladoDer"></div>
+    	</section>
+    	<input type="button" value="¡¡ Genera !!" class="botones" >
+    	<section>
+    		<div id="salida"></div>
+    	</section>
+    	<input type="button" value="<< Compara >>" class="botones" disabled > 
+     </body>
+</html> -->
+
+<!-- NO PUEDES enlazar archivos JS ni dentro de <body>, ni después de <body> ni fuera de <html> -->
