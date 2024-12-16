@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #nombreError {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        #nombreError.visible {
+            display: block;
+        }
+
+        #errorLetras {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        #errorLetras.visible {
+            display: block;
+        }
+
+        #contrasenaError {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        #contrasenaError.visible {
+            display: block;
+        }
+
+        input.invalido {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <h1>Registro</h1>
+        <label for="coche">Matrícula de Coche</label>
+        <input type="text" name="coche" id="coche" /><br>
+        <label for="dni">DNI</label>
+        <input type="text" name="dni" id="dni" /><br>
+        <label for="fecha">Fecha</label>
+        <input type="text" name="fecha" id="fecha" /><br>
+        <label for="moto">Matrícula de Moto</label>
+        <input type="text" name="moto" id="moto" /><br>
+        <label for="banco">Cuenta bancaria</label>
+        <input type="text" name="banco" id="banco" /><br>
+        <label for="contrasena">Contraseña</label>
+        <input type="password" name="contrasena" id="banco" />
+        <br>
+        <span role="alert" id="contraError" aria-hidden="true">
+            Ingrese su contraseña, por favor
+        </span>
+        <span role="alert" id="errorContra" aria-hidden="true">
+            Ingrese su contraseña bien, por favor
+        </span><br>
+        <label for="ip">IP</label>
+        <input type="text" name="ip" id="ip" />
+        <br>
+        <span role="alert" id="ipError" aria-hidden="true">
+            Ingrese su IP, por favor
+        </span>
+        <span role="alert" id="errorIp" aria-hidden="true">
+            Ingrese su IP bien, por favor
+        </span><br>
+        <label for="ip">IP</label>
+        <input type="text" name="ip" id="ip" />
+        <br>
+        <span role="alert" id="ipError" aria-hidden="true">
+            Ingrese su IP, por favor
+        </span>
+        <span role="alert" id="errorIp" aria-hidden="true">
+            Ingrese su IP bien, por favor
+        </span><br>
+        <label for="serie">Número de serie</label>
+        <input type="text" name="serie" id="serie" />
+        <br>
+        <span role="alert" id="serieError" aria-hidden="true">
+            Ingrese su número de serie, por favor
+        </span>
+        <span role="alert" id="errorSerie" aria-hidden="true">
+            Ingrese su número de serie bien, por favor
+        </span><br>
+        <label for="dominio">Dominio</label>
+        <input type="text" name="dominio" id="dominio" />
+        <br>
+        <span role="alert" id="dominioError" aria-hidden="true">
+            Ingrese su dominio, por favor
+        </span>
+        <span role="alert" id="errorDominio" aria-hidden="true">
+            Ingrese su dominio bien, por favor
+        </span><br>
+        <button id="enviar">Enviar</button>
+    </form>
+    <script>
+        const enviar = document.getElementById("enviar");
+
+        enviar.addEventListener("click", validar);
+
+        function validar(e) {
+            e.preventDefault();
+
+            const campoContrasena = document.getElementById("contrasena");
+            const campoIp = document.getElementById("ip");
+            const campoSerie = document.getElementById("serie");
+            const campoDominio = document.getElementById("dominio");
+            let valido = true;
+
+            if (!campoNombre.value) {
+                const errorCoche = document.getElementById("errorCoche");
+                errorCoche.classList.remove("visible");
+                campoNombre.classList.remove("invalido");
+                errorCoche.setAttribute("aria-hidden", true);
+                errorCoche.setAttribute("aria-invalid", false);
+                const cocheError = document.getElementById("cocheError");
+                cocheError.classList.add("visible");
+                campoNombre.classList.add("invalido");
+                cocheError.setAttribute("aria-hidden", false);
+                cocheError.setAttribute("aria-invalid", true);
+            } else {
+                const cocheError = document.getElementById("cocheError");
+                cocheError.classList.remove("visible");
+                campoNombre.classList.remove("invalido");
+                cocheError.setAttribute("aria-hidden", true);
+                cocheError.setAttribute("aria-invalid", false);
+                if (!/^[A-Z]{3}[-]\d{3}*$/.exec(nombre.value.trim())) {
+                    const errorCoche = document.getElementById("errorCoche");
+                    errorCoche.classList.add("visible");
+                    campoNombre.classList.add("invalido");
+                    errorCoche.setAttribute("aria-hidden", false);
+                    errorCoche.setAttribute("aria-invalid", true);
+                } else {
+                    const errorCoche = document.getElementById("errorCoche");
+                    errorCoche.classList.remove("visible");
+                    campoNombre.classList.remove("invalido");
+                    errorCoche.setAttribute("aria-hidden", true);
+                    errorCoche.setAttribute("aria-invalid", false);
+                }
+            }
+
+            if (!campoContrasena.value) {
+                const contrasenaError = document.getElementById("contrasenaError");
+                contrasenaError.classList.add("visible");
+                campoContrasena.classList.add("invalido");
+                contrasenaError.setAttribute("aria-hidden", false);
+                contrasenaError.setAttribute("aria-invalid", true);
+            } else {
+                const contrasenaError = document.getElementById("contrasenaError");
+                contrasenaError.classList.remove("visible");
+                campoContrasena.classList.remove("invalido");
+                contrasenaError.setAttribute("aria-hidden", true);
+                contrasenaError.setAttribute("aria-invalid", false);
+            }
+            return valido;
+        }
+    </script>
+</body>
+
+</html>
