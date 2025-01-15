@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="text">Nombre</label>
+        <input id="nombre" type="text">
+        <br><br>
+        <label for="text">Apellidos</label>
+        <input id="apellidos" type="text">
+        <br><br>
+        <button id="btnentrega" disabled>Entregar</button>
+    </form>
+    <script>
+        let nombre = document.getElementById('nombre');
+        let apellidos = document.getElementById('apellidos');
+        let btnentrega = document.getElementById('btnentrega');
+
+        nombre.addEventListener("input", validar);
+        apellidos.addEventListener("input", validar);
+
+        function validar() {
+            if (nombre.value != "" && apellidos.value != "") {
+                btnentrega.disabled = false;
+            } else {
+                btnentrega.disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

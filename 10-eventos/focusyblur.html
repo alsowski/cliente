@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" onblur="alertFocus()" />
+    <br><br>
+    <label for="edad">Edad</label>
+    <input type="text" name="edad" id="edad" onblur="alertFocus()" />
+    <br><br>
+    <!-- <button type="button" onclick="encenderLuces()">Encender Luces</button> -->
+    <button type="button" onclick="llamarElectricista()">Llamar al electricista</button>
+    <button type="submit">Enviar</button>
+    <!-- <button type="button" onclick="focusNombre()">Focus Nombre</button>
+    <button type="button" onclick="focusEdad()">Focus Edad</button>
+    <button type="button" onclick="blur()">Blur</button> -->
+</body>
+<script>
+    // const nombreInput = document.getElementById("nombre");
+    // nombreInput.addEventListener("blur", alertBlur())
+
+    function focusNombre() {
+        document.getElementById("nombre").focus();
+    }
+
+    function focusEdad() {
+        document.getElementById("edad").focus();
+    }
+
+    function blur() {
+        document.getElementById("nombre").blur();
+    }
+
+    function alertBlur() {
+        alert("Has quitado el foco del nombre");
+    }
+
+    function alertFocus() {
+        document.body.style.backgroundColor = "black";
+    }
+
+    function encenderLuces() {
+        document.body.style.backgroundColor = "yellow";
+    }
+
+    function llamarElectricista() {
+        alert("¡Que se haga la luz!");
+        document.body.style.backgroundColor = "yellow";
+    }
+</script>
+
+</html>

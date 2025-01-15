@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <input type="text" id="input1">
+    <br><br><br>
+    <button id="boton1">1</button>
+    <button id="boton2">2</button>
+    <button id="boton3">3</button>
+    <script>
+        /*
+        $(document).ready(function () {
+            $("#boton1").click(function (evento) {
+                $("#input1").val(1);
+            });
+            $("#boton2").click(function (evento) {
+                $("#input1").val(2);
+            });
+            $("#boton3").click(function (evento) {
+                $("#input1").val(3);
+            });
+        });
+        */
+        
+        $('button').on("click", function(){
+            var text = $(this).text();
+            $('#input1').val(text);
+        });
+    </script>
+</body>
+
+</html>

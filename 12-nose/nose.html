@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CACA</title>
+</head>
+
+<body>
+
+    <script>
+        function confirmarborrado(form) {
+            let borrar = window.confirm("se van a borrar los datos introducidos en el form");
+            (borrar) ? form.reset() : 'return false';
+        }
+        setInterval(() => { console.log("hola"); }, 2000);
+
+        function confirmarBorrado(form) {
+            borrar = window.confirm("¿Está seguro de que desea borrar el mensaje?");
+            if (borrar) {
+                form.mensaje.value = "";
+            } else {
+                alert("No se ha borrado el mensaje");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

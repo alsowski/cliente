@@ -1,0 +1,11 @@
+-Textarea
+-- Si es obligatorio.
+-- Tamaño mínimo.
+-- Tamaño máximo.
+-- Contiene una palabra/no.
+-- Solo carácteres numéricos
+-- Solo carácteres alfabéticos
+-- Número de líneas en un label.
+-- Limitar que haya dos líneas.
+
+-Input Text

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="text">Nombre</label>
+        <input id="nombre" type="text">
+        <br><br>
+        <label for="text">Edad</label>
+        <input id="edad" type="text">
+        <br><br>
+        <label for="tutor" id="tutor" hidden>Tutor</label>
+        <input id="input" hidden>
+    </form>
+    <script>
+        let nombre = document.getElementById('nombre');
+        let edad = document.getElementById('edad');
+        let input = document.getElementById('input');
+        let tutor = document.getElementById('tutor');
+
+        edad.addEventListener("input", validar);
+
+        function validar() {
+            if (edad.textContent < "18") {
+                tutor.hidden = false
+                input.hidden = false;
+            } else if (edad.textContent > "18") {
+                tutor.hidden = true;
+                input.hidden = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
