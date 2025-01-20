@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <form name="cuestionario">
+        <p>3. ¿Quieres conocer los nuevos modelos?<br />
+            <input type="radio" id="resp0" name="respuesta" onclick="gestDecision(event)" />No
+            <input type="radio" id="resp1" name="respuesta" onclick="gestDecision(event)" />Sí
+        </p>
+        <div id="conocerModelos" style="display:none; margin-left:20px">
+            <p>3a. ¿Cuál es tu marca preferida?
+                <select name="modelos">
+                    <option value="">Elige uno:</option>
+                    <option value="1">Ferrari</option>
+                    <option value="2">Mercedes</option>
+                    <option value="3">BMW</option>
+                </select>
+            </p>
+        </div>
+        <p>4. ¿Cuántos años tiene tu actual vehículo?
+            <select name="edadVehiculo">
+                <option value="">Elige una opción:</option>
+                <option value="1">Menos de 3 años</option>
+                <option value="2">Entre 3 y 7 años</option>
+                <option value="3">Más de 7 años</option>
+            </select>
+        </p>
+    </form>
+
+    <script>
+        function gestDecision(evt) {
+            evt = (evt) ? evt : event;
+            var campo = (evt.target) ? evt.target : evt.srcElement;
+            var capa = document.getElementById("conocerModelos");
+            if (campo.id == "respi") {
+                capa.style.display = "block";
+            } else {
+                capa.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
