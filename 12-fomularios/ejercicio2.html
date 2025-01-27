@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">FILE</label>
+        <select id="select">
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="yellow">Amarillo</option>
+            <option value="purple">Morado</option>
+        </select><br><br>
+        <button onclick="validarColor()">Seleccionar</button>
+    </form>
+    <div id="div"></div>
+    <script>
+        function cambiarColor() {
+            var select = document.getElementById('select');
+            var color = select.value;
+            var div = document.getElementById('div');
+            div.style.backgroundColor = color;
+        }
+    </script>
+</body>
+
+</html>

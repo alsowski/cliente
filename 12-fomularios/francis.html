@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francis</title>
+</head>
+
+<body>
+    <select id="select">
+        <option value="red">Rojo</option>
+        <option value="blue">Azul</option>
+        <option value="green">Verde</option>
+        <option value="yellow">Amarillo</option>
+        <option value="purple">Morado</option>
+    </select>
+    <div id="caja"></div>
+
+    <script>
+        const select = document.getElemenstById("color");
+        const caja = document.getElementById("caja");
+
+        select.addEventListener("change", function() {
+
+            switch(select.value) {
+                case "rojo":
+                caja.style.backgroundColor = "red";
+                break;
+                case "rojo":
+                caja.style.backgroundColor = "red";
+                break;
+            }
+        })
+    </script>
+</body>
+
+</html>
