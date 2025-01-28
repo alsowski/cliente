@@ -9,18 +9,19 @@
 
 <body>
     <form action="">
-        <label for="">¿Cuantos hijos tienes?</label>
-        <input type="number" id="num">
+        <label for="num">¿Cuantos hijos tienes?</label>
+        <input type="text" name="num" id="num">
         <div id="nombres"></div>
     </form>
 
     <script>
-        var hijos = document.getElementById('num');
+        const hijos = document.getElementById("num");
+
         hijos.addEventListener("change", () => {
-            var nombres = getElementById("nombres");
+            var nombres = document.getElementById("nombres");
             nombres.replaceChildren();  
             if (hijos.value > 0 ) {
-                for (i = 0; i => num; i++) {
+                for (let i = 0; i < hijos.value; i++) {
                     var label = document.createElement('label');
                     label.innerHTML = "Como se llama tu hijo " + (i+1);
                     var input = document.createElement('input');
