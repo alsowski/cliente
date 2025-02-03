@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <form action="">
+        <label for="profesor">Profesor</label>
+        <input type="checkbox" id="aficion1" name="profesor" value="Profesor"><br>
+        <label for="futbolista">Futbolista</label>
+        <input type="checkbox" id="aficion2" name="futbolista" value="Futbolista"><br>
+        <label for="rapero">Rapero</label>
+        <input type="checkbox" id="aficion3" name="rapero" value="Rapero"><br>
+        <label for="conductor">Conductor</label>
+        <input type="checkbox" id="aficion4" name="conductor" value="Conductor"><br><br>
+
+        <textarea name="aficiones" id="aficiones"></textarea><br><br>
+        <button onclick="meterValores()">Meter</button>
+    </form>
+
+    <script>
+        var textarea = document.getElementById("aficiones");
+        var aficion1 = document.getElementById("aficion1");
+        var aficion2 = document.getElementById("aficion2");
+        var aficion3 = document.getElementById("aficion3");
+        var aficion4 = document.getElementById("aficion4");
+
+        function meterValores() {
+            if (aficion1) {
+                textarea.innerText(aficion1.value);
+            } else if (aficion2) {
+                textarea.innerText(aficion2.value);
+            } else if (aficion3) {
+                textarea.innerText(aficion3.value);
+            } else if (aficion4) {
+                textarea.innerText(aficion4.value);
+            }
+        }
+
+        // aficion1.addEventListener("change", () => {
+        //     if (aficion1) {
+        //         textarea.innerText(aficion1.value);
+        //     } else {
+        //         textarea.innerText("");
+        //     }
+        // });
+
+        // aficion1.addEventListener("change", () => {
+        //     if (aficion2) {
+        //         textarea.innerText(aficion2.value);
+        //     } else {
+        //         textarea.innerText("");
+        //     }
+        // });
+
+        // aficion1.addEventListener("change", () => {
+        //     if (aficion3) {
+        //         textarea.innerText(aficion3.value);
+        //     } else {
+        //         textarea.innerText("");
+        //     }        
+        // });
+
+        // aficion4.addEventListener("change", () => {
+        //     if (aficion4) {
+        //         textarea.innerText(aficion4.value);
+        //     } else {
+        //         textarea.innerText("");
+        //     }        
+        // });
+
+    </script>
+</body>
+</html>

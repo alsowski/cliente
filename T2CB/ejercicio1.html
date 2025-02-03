@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" minlength="3" required><br>
+        <span role="alert" id="nombreError" hidden>
+            Ingrese su nombre, por favor
+        </span>
+        <span role="alert" id="nombreErrorCar" hidden>
+            Ingrese su nombre con más de dos carácteres, por favor
+        </span><br>
+        <label for="primerap">Primer Apellido</label>
+        <input type="text" name="primerap" id="primerap" minlength="3" required><br>
+        <span role="alert" id="primerapError" hidden>
+            Ingrese su primer apellido, por favor
+        </span>
+        <span role="alert" id="primerapErrorCar" hidden>
+            Ingrese su primer apellido con más de dos carácteres, por favor
+        </span><br>
+        <label for="segundoap">Segundo Apellido</label>
+        <input type="text" name="segundoap" id="segundoap" minlength="3"><br>
+        <span role="alert" id="segundoapError" hidden>
+            Ingrese su segundo apellido con más de dos carácteres, por favor
+        </span><br>
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" id="foto"><br>
+        <span role="alert" id="fotoError" hidden>
+            La foto debe ser .jpg o .png
+        </span><br>
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad" minlength="18" maxlength="99" required><br>
+        <span role="alert" id="edadError" hidden>
+            Ingrese su edad, por favor
+        </span>
+        <span role="alert" id="edadErrorNum" hidden>
+            Ingrese su edad entre 18 y 99 años, por favor
+        </span><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required><br>
+        <span role="alert" id="emailError" hidden>
+            Ingrese su email, por favor
+        </span>
+        <span role="alert" id="emailErrorVal" hidden>
+            Ingrese su email siguiendo este patrón (XXX.XX@YY.YY.ZZZ), por favor
+        </span><br>
+        <label for="contra">Contraseña</label>
+        <input type="password" name="contra" id="contra" minlength="8" maxlength="10" required><br>
+        <span role="alert" id="contraError" hidden>
+            Ingrese su contraseña, por favor
+        </span>
+        <span role="alert" id="contraErrorNum" hidden>
+            Ingrese su contraseña entre 8 y 10 carácteres, por favor
+        </span><br>
+        <label for="repcontra">Repite Contraseña</label>
+        <input type="password" name="repcontra" id="repcontra" minlength="8" maxlength="10" required><br>
+        <span role="alert" id="repcontraError" hidden>
+            Ingrese su contraseña de nuevo, por favor
+        </span>
+        <span role="alert" id="repcontraErrorIgual" hidden>
+            Ingrese su contraseña igual que la anterior, por favor
+        </span><br>
+        <input type="submit" id="enviar" value="Enviar" onclick="EnviarFormulario()">
+        <input type="button" value="Limpiar" onClick="LimpiarFormulario(this.form)">
+    </form>
+
+    <script>
+        var nombre = document.getElementById("nombre");
+        var primerap = document.getElementById("primerap");
+        var segundoap = document.getElementById("segundoap");
+        var foto = document.getElementById("foto");
+        var edad = document.getElementById("edad");
+        var email = document.getElementById("email");
+        var contra = document.getElementById("contra");
+        var repcontra = document.getElementById("repcontra");
+
+        nombre.addEventListener("input", validarNombre);
+        primerap.addEventListener("input", validarPrimer);
+        segundoap.addEventListener("input", validarSegundo);
+        foto.addEventListener("input", validarFoto);
+        edad.addEventListener("input", validarEdad);
+        email.addEventListener("input", validarEmail);
+        contra.addEventListener("input", validarContra);
+        repcontra.addEventListener("input", validarRepcontra);
+
+        function validarNombre() {
+            if (!nombre.value) {
+                const nombreError = document.getElementById("nombreError");
+                nombreError.removeAttribute("hidden");
+            } else {
+                nombreError.addAttribute("hidden");
+            }
+
+            if (nombre.value) {
+                if (nombre.value.length < 2) {
+                    const nombreErrorCar = document.getElementById("nombreErrorCar");
+                    nombreErrorCar.removeAttribute("hidden");
+                } else {
+                    nombreErrorCar.addAttribute("hidden");
+                }
+            }
+        }
+
+        function validarPrimer() {
+            if (!primerap.value) {
+                const primerapError = document.getElementById("primerapError");
+                primerapError.removeAttribute("hidden");
+            } else {
+                primerapError.addAttribute("hidden");
+            }
+
+            if (primerap.value) {
+                if (primerap.value.length < 2) {
+                    const primerapErrorCar = document.getElementById("primerapErrorCar");
+                    primerapErrorCar.removeAttribute("hidden");
+                } else {
+                    primerapErrorCar.addAttribute("hidden");
+                }
+            }
+        }
+
+        function validarSegundo() {
+            if (segundoap.value) {
+                if (segundoap.value.length < 2) {
+                    const segundoapError = document.getElementById("segundoapError");
+                    segundoapError.removeAttribute("hidden");
+                } else {
+                    segundoapError.addAttribute("hidden");
+                }
+            }
+        }
+
+        function validarFoto() {
+            if (foto.value) {
+                let extensiones = ["jpg", "png"];
+                let extension = foto.value.split(".")[1];
+                if (!extensiones.includes(extension)) {
+                    const fotoError = document.getElementById("fotoError");
+                    fotoError.removeAttribute("hidden");
+                } else {
+                    fotoError.addAttribute("hidden");
+                }
+            }
+        }
+
+        function validarEdad() {
+            if (!edad.value) {
+                const edadError = document.getElementById("edadError");
+                edadError.removeAttribute("hidden");
+            } else {
+                edadError.addAttribute("hidden");
+            }
+
+            if (edad.value) {
+                if (edad.value.length < 18 && edad.value.length > 99) {
+                    const edadErrorNum = document.getElementById("edadErrorNum");
+                    edadErrorNum.removeAttribute("hidden");
+                } else {
+                    edadErrorNum.addAttribute("hidden");
+                }
+            }
+        }
+
+        function validarEmail() {
+            if (!email.value) {
+                const emailError = document.getElementById("emailError");
+                emailError.removeAttribute("hidden");
+            } else {
+                emailError.addAttribute("hidden");
+            }
+
+            if (email.value) {
+                if (!/^XXX.XX@YY.YY.ZZZ*$/.exec(email.value.trim())) {
+                    const emailErrorVal = document.getElementById("emailErrorVal");
+                    emailErrorVal.removeAttribute("hidden");
+                } else {
+                    emailErrorVal.addAttribute("hidden");
+                }
+            }
+        }
+
+        function validarContra() {
+            if (!contra.value) {
+                const contraError = document.getElementById("contraError");
+                contraError.removeAttribute("hidden");
+            } else {
+                contraError.addAttribute("hidden");
+            }
+
+            if (contra.value) {
+                if (contra.value.length < 8 && contra.value.length > 10) {
+                    const contraErrorNum = document.getElementById("contraErrorNum");
+                    contraErrorNum.removeAttribute("hidden");
+                } else {
+                    contraErrorNum.addAttribute("hidden");
+                }
+            }
+        }
+
+        function validarRepcontra() {
+            if (!repcontra.value) {
+                const repcontraError = document.getElementById("repcontraError");
+                repcontraError.removeAttribute("hidden");
+            } else {
+                repcontraError.addAttribute("hidden");
+            }
+
+            if (repcontra.value) {
+                if (repcontra.value == contra.value) {
+                    const repcontraErrorIgual = document.getElementById("repcontraErrorIgual");
+                    repcontraErrorIgual.removeAttribute("hidden");
+                } else {
+                    repcontraErrorIgual.addAttribute("hidden");
+                }
+            }
+        }
+
+        function EnviarFormulario() {
+            if (nombre.value && primerap.value && edad.value && email.value && contra.value && repcontra.value) {
+                alert(
+                    "Nombre: " + nombre.value + " " +
+                    "Primer Apellido: " + primerap.value + " " +
+                    "Segundo Apellido: " + segundoap.value + " " +
+                    "Foto: " + foto.value + " " +
+                    "Edad: " + edad.value + " " +
+                    "Email: " + email.value + " " +
+                    "Contraseña: (no se muestra, es la que usted ha elegido)"
+                )
+            }
+        }
+
+        function LimpiarFormulario(form) {
+            borrar = window.confirm("Se va a limpiar el formulario");
+
+            (borrar) ? form.reset() : "return false";
+        }
+    </script>
+</body>
+
+</html>
